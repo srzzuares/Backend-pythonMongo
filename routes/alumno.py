@@ -11,7 +11,18 @@ router = APIRouter()
 async def get_students():
     result = conn.execute(alumnos.select()).fetchall()
     print(result)
-    return {"message": "Hello World"}
+    resultado = conn.execute(alumnos.select()).fetchall()
+    response=[]
+    for student in resultado:
+        alumno={
+            "matricula":student[0],
+            "nombre":student[1],
+            "apellidos":student[2],
+            "cuatrimestre":student[3],
+            "promedio":student[4]
+        }
+        response.append(alumno)
+    return response
 
 #create a student
 
