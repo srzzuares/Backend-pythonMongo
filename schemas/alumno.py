@@ -4,4 +4,4 @@ class UserModel(BaseModel):
     nombre : str
     apellidos : str
     cuatrimestre : int
-    problema : float
+    promedio : float
