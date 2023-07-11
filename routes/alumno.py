@@ -8,7 +8,7 @@ router = APIRouter()
 #get all students
 
 @router.get("/students")
-async def get_students():
+def get_students():
     result = conn.execute(alumnos.select()).fetchall()
     print(result)
     resultado = conn.execute(alumnos.select()).fetchall()
@@ -27,33 +27,53 @@ async def get_students():
 #create a student
 
 @router.post("/students")
-async def create_student(alumno:UserModel):
+def create_student(alumno:UserModel):
     conn.execute(alumnos.insert().values(dict(alumno)))
     conn.commit()
     res={'message': "Student successfully"}
     return res
 
 
-""" @app.get("/")
-async def root():
-    return {"message": "Hello World"}
+@router.get('/getOne/{code}')
+def getOne(code):
+    student=conn.execute(alumnos.select().where(alumnos.c.matricula==code)).first()
+    if student != None:
+        student_dict={
+            "matricula":student[0],
+            "nombre":student[1],
+            "apellidos":student[2],
+            "cuatrimestre":student[3],
+            "promedio":student[4]
+        }
+        return student_dict
+    else:
+        res={
+            "status":"No existe el alumno"
+        }
+        return res
+    
+    
+@router.put('/updateOne/{code}')
+def actualizarAlumno(alumno:UserModel, code):
+    res=getOne(code)
+    print(res)
+    if res.get("status")=="No existe el alumno":
+       return res
+    else:
+        result=conn.execute(alumnos.update().values(dict(alumno)).where(alumnos.c.matricula==code))
+        conn.commit()
+    return result.last_updated_params()  
 
-
-#get a student by id        
-
-@app.get("/students/{student_id}")
-async def get_student(student_id: int):
-    return {"message": "Hello World"}
-
-
-#update a student
-
-@app.put("/students/{student_id}")
-async def update_student():
-    return {"message": "Hello World"}
-
-#delete a student
-
-@app.delete("/students/{student_id}")
-async def delete_student():
-    return {"message": "Hello World"} """
+        
+@router.delete('/delete/{code}')
+def eliminarAlumno(code):
+    res=getOne(code)
+    if res.get("status")=="No existe el alumno":
+       return res
+    else:
+        result=conn.execute(alumnos.delete().where(alumnos.c.matricula==code))
+        conn.commit()
+        res1={
+            "status":"Alumno eliminado con éxito"
+        }
+        return res1
