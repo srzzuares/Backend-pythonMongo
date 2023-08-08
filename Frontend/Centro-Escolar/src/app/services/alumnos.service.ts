@@ -6,6 +6,10 @@ import { Alumno } from '../models/alumno';
   providedIn: 'root'
 })
 export class AlumnosService {
+  URLWEB = 'http://127.0.0.1:8000/';
   alumnos: Alumno[] = [];
   constructor(private http: HttpClient) { }
+  getAllStudents() {
+    return this.http.get<Alumno[]>(this.URLWEB + 'students')
+  }
 }

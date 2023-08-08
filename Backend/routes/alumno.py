@@ -10,7 +10,6 @@ router = APIRouter()
 @router.get("/students")
 def get_students():
     result = conn.execute(alumnos.select()).fetchall()
-    print(result)
     resultado = conn.execute(alumnos.select()).fetchall()
     response=[]
     for student in resultado:
