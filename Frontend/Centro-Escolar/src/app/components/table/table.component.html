@@ -1,1 +1,31 @@
-<p>table works!</p>
+<table class="table table-primary table-striped">
+    <tbody>
+        <th>ID</th>
+        <th>Matriula</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Cuatrimestre</th>
+        <th>Promedio</th>
+        <th colspan="2">Opciones</th>
+    </tbody>
+    <tbody>
+        <tr *ngFor="let stude of alumnoService.alumnos">
+            <td>{{stude.ID}}</td>
+            <td>{{stude.matricula}}</td>
+            <td>{{stude.nombre}}</td>
+            <td>{{stude.apellidos}}</td>
+            <td>{{stude.cuatrimestre}}</td>
+            <td>{{stude.promedio}}</td>
+            <td>
+                <button class="btn btn-warning">
+                    <i class="material-icons">edit</i>
+                </button>
+            </td>
+            <td>
+                <button class="btn btn-danger">
+                    <i class="material-icons">delete</i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

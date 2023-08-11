@@ -1,7 +1,9 @@
 from pydantic import BaseModel
+
+
 class UserModel(BaseModel):
-    matricula : int
-    nombre : str
-    apellidos : str
-    cuatrimestre : int
-    promedio : float
+    matricula: int = 2005
+    nombre: str = 'Crystian'
+    apellidos: str = 'Suarez'
+    cuatrimestre: int = 9
+    promedio: float = 10

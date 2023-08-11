@@ -1,30 +1,35 @@
 <div class="card">
     <div class="card-body">
-        <form action="">
+        <form NgForm="#studentForm">
             <div class="row">
                 <div class="col-lg-6">
                     <label for="txtMatricula" class="form-label">Matricula</label>
-                    <input type="text" id="txtMatricula" name="matricula" class="form-control">
+                    <input type="text" id="txtMatricula" name="matricula" class="form-control"
+                    [(ngModel)]="studentsService.selectStudent.matricula">
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col-lg-6">
                     <label for="txtNombre" class="form-label">Nombre</label>
-                    <input type="text" id="txtNombre" name="nombre" class="form-control">
+                    <input type="text" id="txtNombre" name="nombre" class="form-control"
+                    [(ngModel)]="studentsService.selectStudent.nombre">
                 </div>
                 <div class="col-lg-6">
                     <label for="txtApellidos" class="form-label">Apellidos</label>
-                    <input type="text" id="txtApellidos" name="apellidos" class="form-control">
+                    <input type="text" id="txtApellidos" name="apellidos" class="form-control"
+                    [(ngModel)]="studentsService.selectStudent.apellidos">
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col-lg-6">
                     <label for="txtCuatrimestre" class="form-label">Cuatrimestre</label>
-                    <input type="text" id="txtCuatrimestre" name="cuatrimestre" class="form-control">
+                    <input type="text" id="txtCuatrimestre" name="cuatrimestre" class="form-control"
+                    [(ngModel)]="studentsService.selectStudent.cuatrimestre">
                 </div>
                 <div class="col-lg-6">
                     <label for="txtPromedio" class="form-label">Promedio</label>
-                    <input type="text" id="txtPromedio" name="promedio" class="form-control">
+                    <input type="text" id="txtPromedio" name="promedio" class="form-control"
+                    [(ngModel)]="studentsService.selectStudent.promedio">
                 </div>
             </div>
             <div class="row">
