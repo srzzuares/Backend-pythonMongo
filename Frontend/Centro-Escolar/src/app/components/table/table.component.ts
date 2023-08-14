@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AlumnosService } from 'src/app/services/alumnos.service';
+import { Alumno } from 'src/app/models/alumno';
 
 @Component({
   selector: 'app-table',
@@ -19,5 +20,14 @@ export class TableComponent {
       },
       err => console.error(err)
     )
+  }
+  deleteStudent(id:Number){
+    this.alumnoService.deleteStudent(id).subscribe(
+      res => this.getAllStudents(),
+      err=>console.error(err)
+    )
+  }
+  getStudentOne(alumno:Alumno){
+    this.alumnoService.selectStudent=alumno
   }
 }

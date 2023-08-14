@@ -23,4 +23,7 @@ export class AlumnosService {
   addStudent(alumno:Alumno) {
     return this.http.post(this.URLWEB + 'students',alumno)
   }
+  deleteStudent (id:Number){
+    return this.http.delete(this.URLWEB+'delete/'+id)
+  }
 }

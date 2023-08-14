@@ -17,12 +17,12 @@
             <td>{{stude.cuatrimestre}}</td>
             <td>{{stude.promedio}}</td>
             <td>
-                <button class="btn btn-warning">
+                <button class="btn btn-warning" (click)="getStudentOne(stude)">
                     <i class="material-icons">edit</i>
                 </button>
             </td>
             <td>
-                <button class="btn btn-danger">
+                <button class="btn btn-danger" (click)="deleteStudent(stude.ID)">
                     <i class="material-icons">delete</i>
                 </button>
             </td>
