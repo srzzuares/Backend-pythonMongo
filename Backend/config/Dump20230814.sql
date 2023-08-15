@@ -32,7 +32,7 @@ CREATE TABLE `alumnos` (
   `cuatrimestre` int DEFAULT NULL,
   `promedio` float DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `alumnos` (
 
 LOCK TABLES `alumnos` WRITE;
 /*!40000 ALTER TABLE `alumnos` DISABLE KEYS */;
-INSERT INTO `alumnos` VALUES (1,25,'Crystian','Suarez',9,10),(2,2305,'Uriel','Maldonado',9,10),(3,1305,'Josseline','Alvarado',9,10),(4,13455,'Gabriel','Guzman',9,10),(5,1334,'Jose','Picasso',9,10),(6,32453,'Mateo','Maldonado',9,10),(7,453,'Eliel','Diaz',9,10);
+INSERT INTO `alumnos` VALUES (1,25,'Crystian','Suarez',9,10),(2,2305,'Uriel','Maldonado',9,10),(3,1305,'Josseline','Alvarado',9,10),(4,13455,'Gabriel','Guzman',9,10),(5,1334,'Jose','Picasso',9,10),(6,32453,'Mateo','Maldonado',9,10),(7,453,'Eliel','Diaz',9,10),(8,101234,'Lucio ','SUAREZ',9,10);
 /*!40000 ALTER TABLE `alumnos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -62,4 +62,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-08-11 17:18:22
+-- Dump completed on 2023-08-14 21:05:12
